@@ -1,50 +1,49 @@
-# Welcome to your Expo app 👋
+## Visão Geral
+Este é um aplicativo React Native desenvolvido com Expo que consome dados da API [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para exibir uma lista de usuários fictícios. O app permite selecionar um usuário da lista para visualizar seus detalhes e voltar à tela inicial.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Estrutura do Código
+O código está dividido em três componentes principais:
 
-## Get started
+1. `UsersList`: Exibe uma lista de usuários com nome, e-mail e uma imagem de avatar.
+2. `UserDetails`: Exibe detalhes do usuário selecionado, como telefone, site e endereço.
+3. `App`: Controla a navegação entre os componentes de lista e detalhes.
 
-1. Install dependencies
+### Estrutura de Arquivos
 
-   ```bash
-   npm install
-   ```
+.
+├── App.js       # Arquivo principal do aplicativo
+└── assets/      # Diretório para imagens e outros recursos (se necessário)## Funcionamento
 
-2. Start the app
+1. **Carregamento de Dados:**
+   - O componente `UsersList` faz uma requisição HTTP para `https://jsonplaceholder.typicode.com/users`.
+   - Os dados retornados são armazenados no estado e exibidos na tela.
+   - Se ocorrer um erro na requisição, uma mensagem de erro é mostrada.
 
-   ```bash
-    npx expo start
-   ```
+2. **Seleção de Usuário:**
+   - O usuário pode tocar em um item da lista para visualizar seus detalhes.
+   - Isso aciona a função `onSelectUser`, que altera o estado `selectedUserId` no componente `App`.
 
-In the output, you'll find options to open the app in a
+3. **Exibição de Detalhes:**
+   - O componente `UserDetails` faz uma nova requisição para obter os detalhes do usuário selecionado.
+   - Os detalhes incluem nome, e-mail, telefone, site e endereço.
+   - Um botão "Voltar" permite retornar à tela inicial.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Estilos
+Os estilos são definidos usando `StyleSheet` do React Native. O aplicativo possui um layout responsivo, com:
+- Cores em tons de azul para fundo e elementos visuais.
+- Cartões (`card`) para exibição de informações.
+- Avatares obtidos da API `https://i.pravatar.cc/150?img=<id>`.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Como Executar
+```sh
+# Certifique-se de ter o Node.js e o Expo CLI instalados.
 
-## Get a fresh project
+# Clone este repositório e acesse o diretório do projeto:
+git clone <URL_DO_REPOSITORIO>
+cd nome-do-projeto
 
-When you're ready, run:
+# Instale as dependências:
+npm install
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Inicie o aplicativo:
+npx expo start
