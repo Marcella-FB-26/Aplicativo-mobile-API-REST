@@ -43,14 +43,14 @@ Os estilos são definidos usando `StyleSheet` do React Native. O aplicativo poss
 
 ## Como Executar
 
-# Certifique-se de ter o Node.js e o Expo CLI instalados.
+**Certifique-se de ter o Node.js e o Expo CLI instalados.**
 
-# Clone este repositório e acesse o diretório do projeto:
+**Clone este repositório e acesse o diretório do projeto:**
 git clone <URL_DO_REPOSITORIO>
 cd nome-do-projeto
 
-# Instale as dependências:
+**Instale as dependências:**
 npm install
 
-# Inicie o aplicativo:
+** Inicie o aplicativo:**
 npx expo start
